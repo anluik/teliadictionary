@@ -20,7 +20,6 @@ public class DictionaryApiApp {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                System.out.println("ADD CORS MAPPINGS ------------------------------------");
                 registry.addMapping("/words")
                         .allowedMethods("*")
                         .allowedOrigins("http://localhost:8080");

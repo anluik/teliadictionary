@@ -1,4 +1,3 @@
-import { IWordCreate } from '../domain/Words/IWordCreate';
 import Axios from "axios";
 import { IFetchResponse } from '@/types/IFetchResponse';
 

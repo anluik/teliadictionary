@@ -16,6 +16,7 @@ public class Example {
     private UUID id;
     @Size(min = 1, max = 256)
     private String exampleText;
+    private String language;
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="word_id")
@@ -23,9 +24,10 @@ public class Example {
 
     public Example() {} // must have for deserialization
 
-    public Example(String exampleText) {
+    public Example(String exampleText, String language) {
         this.id = UUID.randomUUID();
         this.exampleText = exampleText;
+        this.language = language;
     }
 
     public UUID getId() {
@@ -46,6 +48,14 @@ public class Example {
 
     public void setWord(Word word) {
         this.word = word;
+    }
+
+    public String getLanguage() {
+        return this.language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     @Override

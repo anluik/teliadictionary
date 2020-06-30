@@ -39,6 +39,12 @@ class WordControllerTest {
 
     private String baseURI = "/words/";
 
+    /**
+     *
+     * I tried testing :) doesn't work :) I have no idea currently how to test this correctly.
+     *
+     */
+
     @Test
     void getWords() throws Exception {
         Word mockWord = new Word("test", "est");

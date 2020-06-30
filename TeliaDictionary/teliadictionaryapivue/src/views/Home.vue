@@ -84,7 +84,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { ITranslation } from '../domain/Translations/ITranslation';
 import { IExample } from '../domain/Examples/IExample';
 import store from '../store';

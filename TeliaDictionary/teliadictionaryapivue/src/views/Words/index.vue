@@ -145,15 +145,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { IAlertData } from "@/types/IAlertData";
+import { Component, Vue } from "vue-property-decorator";
 import { AlertType } from "@/types/AlertType";
 import Alert from "@/components/Alert.vue";
 import router from "../../router";
 import store from "@/store";
 import { IWord } from '../../domain/Words/IWord';
 import { IWordCreate } from '../../domain/Words/IWordCreate';
-import { ITranslationCreate } from '../../domain/Translations/ITranslationCreate';
 import { IExampleCreate } from '../../domain/Examples/IExampleCreate';
 
 @Component({

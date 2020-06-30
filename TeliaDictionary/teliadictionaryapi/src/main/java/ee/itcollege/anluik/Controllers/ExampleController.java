@@ -37,7 +37,7 @@ public class ExampleController {
     @RequestMapping("/words/{lang}/{term}/examples")
     public List<Example> getExamples(@PathVariable String lang, @PathVariable String term) {
         findWord(term, lang);
-        return this.exampleService.getAll(term);
+        return this.exampleService.getAll(term, lang);
     }
 
     /**
@@ -65,7 +65,7 @@ public class ExampleController {
     @RequestMapping(value = "/words/{lang}/{term}/examples", method = RequestMethod.POST)
     public ResponseEntity createExample(@PathVariable String lang, @PathVariable String term, @Valid @RequestBody Example example) {
         Word word = findWord(term, lang);
-        Example newExample = new Example(example.getExampleText());
+        Example newExample = new Example(example.getExampleText(), lang);
         newExample.setWord(word);
         this.exampleService.create(newExample);
 

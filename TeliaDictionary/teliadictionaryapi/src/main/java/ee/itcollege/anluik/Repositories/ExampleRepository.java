@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface ExampleRepository extends CrudRepository<Example, UUID> {
-    List<Example> findByWordTerm(String term);
+    List<Example> findByWordTermAndLanguage(String term, String lang);
 }

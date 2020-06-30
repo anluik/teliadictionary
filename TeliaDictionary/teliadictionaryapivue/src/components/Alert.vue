@@ -11,9 +11,8 @@
 
 <script lang="ts">
 import { IAlertData } from './../types/IAlertData';
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import store from "../store";
-import router from '../router';
 
 @Component
 export default class Alert extends Vue {

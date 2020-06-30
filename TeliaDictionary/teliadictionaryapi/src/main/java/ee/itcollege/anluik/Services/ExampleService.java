@@ -26,8 +26,8 @@ public class ExampleService {
      *
      * @return list of examples
      */
-    public List<Example> getAll(String term) {
-        return new ArrayList<>(this.exampleRepository.findByWordTerm(term));
+    public List<Example> getAll(String term, String lang) {
+        return new ArrayList<>(this.exampleRepository.findByWordTermAndLanguage(term, lang));
     }
 
 
