@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Tue Jun 30 19:25:07 EEST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0173-060b-db11-00000e7ba700 
-on database directory memory:C:\Users\andri\anluik\TeliaDictionary\teliadictionaryapi\adfbcb9a-327f-4592-90c8-ec7db1a21464 with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Tue Jun 30 20:07:10 EEST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0173-0632-5ab3-00000e8cbfa0 
+on database directory memory:C:\Users\andri\anluik\TeliaDictionary\teliadictionaryapi\2c1a9db3-c1f5-4ef4-8d58-d187b5aaba96 with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
 Loaded from file:/C:/Users/andri/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_171-b11
