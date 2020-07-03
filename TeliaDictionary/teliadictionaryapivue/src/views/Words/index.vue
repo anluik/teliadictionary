@@ -43,7 +43,7 @@
             <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
                 Add to dictionary
             </button>
-            <button @click="switchLanguage()" class="btn btn-dark" type="button" style="margin-left: 5px">
+            <button @click="switchLanguage()" class="btn btn-dark" type="button" :style="'margin-' + styleChange() + ': 5px'">
                 {{ getIsLanguageEst() ? "Estonian -> English" : "English -> Estonian" }}<i class="fa fa-exchange"></i>
             </button>
         </div>
@@ -117,7 +117,7 @@
         <br />
 
         <!-- Words -->
-        <div v-if="getIsLanguageEst() ? estWords.length !== 0 : engWords.length !== 0">
+        <div v-if="getIsLanguageEst() ? estWords.length !== 0 : engWords.length !== 0" style="margin-bottom: 300px">
             <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                 <div v-for="letter in alphabet" :key="letter">
                     <h4 :id="letter">{{ letter }}</h4>
@@ -140,7 +140,6 @@
         <div v-else>
             <h4>Dictionary is empty</h4>
         </div>
-        <br/><br/>
     </div>
 </template>
 
@@ -161,6 +160,7 @@ import { IExampleCreate } from '../../domain/Examples/IExampleCreate';
 })
 export default class WordsIndex extends Vue {
     private modalDataTerm = "";
+    private isLandscape = window.innerHeight < window.innerWidth;
     private newWord: IWordCreate = { // new word.
         term: ""
     }
@@ -195,6 +195,10 @@ export default class WordsIndex extends Vue {
         this.alphabet = this.alphabet.filter((letter, index) => {
             return this.alphabet.indexOf(letter) === index;
         }).sort();
+    }
+
+    styleChange() {
+        return this.isLandscape ? "left" : "top";
     }
 
     dropdownSearch(term: string) { // search term when user clicked word -> search from dropdown
@@ -287,6 +291,9 @@ export default class WordsIndex extends Vue {
 
     mounted() { // lifecycle method
         this.refreshWords();
+        window.addEventListener("orientationchange", () => {
+            this.isLandscape = window.innerHeight > window.innerWidth
+        });
     }
 }
 </script>

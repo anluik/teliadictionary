@@ -2,12 +2,15 @@
     <div style="word-break: break-word">
         <div class="input-group mb-3" style="top: 20px">
             <div class="input-group-prepend">
-                <button @click="searchTerm(searchInput)" class="btn btn-outline-secondary" type="button" style="background: whitesmoke">Search</button>
+                <button @click="searchTerm(searchInput)" class="btn btn-outline-secondary" type="button" style="position: relative; background: whitesmoke; z-index: 0">
+                    <i v-if="isMobile()" class="fa fa-search"></i>
+                    <i v-else>Search</i>
+                </button>
             </div>
             <input type="text" class="form-control" :placeholder="getLanguage() === 'est' ? 'Estonian -> English' : 'English -> Estonian'"
                 aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="searchInput">
             <div class="input-group-append">
-                <button @click="switchLanguage()" class="btn btn-outline-secondary" type="button" style="background: whitesmoke">
+                <button @click="switchLanguage()" class="btn btn-outline-secondary" type="button" style="position: relative; background: whitesmoke; z-index: 0">
                     <i class="fa fa-exchange"></i>
                 </button>
             </div>
@@ -146,6 +149,10 @@ export default class Home extends Vue {
 
     getLanguage(): string { // get current language mode
         return store.state.languageEst ? "est" : "eng";
+    }
+
+    isMobile() {
+        return store.state.isMobile();
     }
 
     fuzzyWordClicked(word: string) { // translate fuzzy word
